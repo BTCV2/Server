@@ -32,6 +32,11 @@ const manifest = {
             }
         },
         {
+          plugin :{
+              register: './Authentication',
+          }
+        },
+        {
             plugin:{
                 register: './routes/lessonRoutes',
             }
@@ -44,6 +49,11 @@ const manifest = {
         {
             plugin:{
                 register: './routes/attendanceRoutes',
+            }
+        },
+        {
+            plugin:{
+                register: './routes/userRoutes',
             }
         },
         {
@@ -67,7 +77,8 @@ const manifest = {
                         Student:"./build/models/Student",
                         Lesson:"./build/models/Lessons",
                         Attendance: "./build/models/Attendance",
-                        Mark:"./build/models/Marks"
+                        Mark:"./build/models/Marks",
+                        User:"./build/models/User"
                     }
                 }
             }
