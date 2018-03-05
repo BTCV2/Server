@@ -7,6 +7,12 @@ exports.register = function (server, options, cont) {
         {
             method: "GET",
             path: "/{standard}/{subject}/lesson",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['user', 'admin']
+                }
+            },
             handler: lessonctrl.getLesson
         },
         {
