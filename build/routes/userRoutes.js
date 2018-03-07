@@ -10,21 +10,45 @@ exports.register = function (server, options, cont) {
         {
             method: "POST",
             path: "/user/create",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: userctrl.insertUser
         },
         {
             method: "GET",
             path: "/user/{userName}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['student', 'admin']
+                }
+            },
             handler: userctrl.getUser
         },
         {
             method: "PUT",
             path: "/user/{userName}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: userctrl.updateUser
         },
         {
             method: "DELETE",
             path: "/user/{userName}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: userctrl.deleteUser
         },
         {

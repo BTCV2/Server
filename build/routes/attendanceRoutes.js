@@ -7,16 +7,34 @@ exports.register = function (server, options, cont) {
         {
             method: "GET",
             path: "/attendance/{rollNumber}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['student', 'admin']
+                }
+            },
             handler: attendenceCtrl.findAttendanceOfaStundent
         },
         {
             method: "POST",
             path: "/attendance/{rollNumber}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: attendenceCtrl.insertAttendance
         },
         {
             method: "PUT",
             path: "/attendance/{rollNumber}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: attendenceCtrl.editAttendance
         }
     ]);

@@ -10,26 +10,56 @@ exports.register = function (server, options, cont) {
         {
             method: "POST",
             path: "/student/create",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: studentctrl.insertStudent
         },
         {
             method: "GET",
             path: "/student/{standard}/getRollNumber",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: studentctrl.getLatestRollNumber
         },
         {
             method: "GET",
             path: "/student/{rollNumber}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: studentctrl.getStudent
         },
         {
             method: "PUT",
             path: "/student/{rollNumber}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: studentctrl.updateStudent
         },
         {
             method: "DELETE",
             path: "/student/{rollNumber}",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: studentctrl.deleteStudent
         }
     ]);

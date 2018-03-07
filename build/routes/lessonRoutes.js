@@ -18,16 +18,34 @@ exports.register = function (server, options, cont) {
         {
             method: "POST",
             path: "/{standard}/{subject}/lesson",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: lessonctrl.insertLesson
         },
         {
             method: "PUT",
             path: "/{standard}/{subject}/lesson",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: lessonctrl.editLesson
         },
         {
             method: "DELETE",
             path: "/{standard}/{subject}/lesson",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler: lessonctrl.deleteLesson
         },
     ]);

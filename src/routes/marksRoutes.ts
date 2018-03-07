@@ -10,21 +10,45 @@ exports.register = function (server: Hapi.Server, options, cont) {
         {
             method:"GET",
             path:"/{standard}/{subject}/mark",
+            config:{
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['student','admin']
+                }
+            },
             handler:markctrl.getMarks
         },
         {
             method:"POST",
             path:"/{standard}/{subject}/mark",
+            config:{
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler:markctrl.insertMarks
         },
         {
             method:"PUT",
             path:"/{standard}/{subject}/mark",
+            config:{
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler:markctrl.editMarks
         },
         {
             method:"DELETE",
             path:"/{standard}/{subject}/mark",
+            config:{
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin']
+                }
+            },
             handler:markctrl.deleteMarks
         },
     ])

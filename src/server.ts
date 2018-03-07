@@ -4,7 +4,7 @@
 "use strict";
 import * as Glue from "glue";
 const dbOpts = {
-    url: 'mongodb://localhost:27017/demo',
+    url: 'mongodb://btc17:btc17@ds257808.mlab.com:57808/btc17',
     settings: {
         poolSize: 10
     },
@@ -27,14 +27,14 @@ const manifest = {
          }
          },
         {
-            plugin:{
-                register: './routes/studentRoutes',
+            plugin :{
+                register: './Authentication',
             }
         },
         {
-          plugin :{
-              register: './Authentication',
-          }
+            plugin:{
+                register: './routes/studentRoutes',
+            }
         },
         {
             plugin:{
@@ -69,11 +69,10 @@ const manifest = {
                 register:'hapi-mongo-models',
                 options:{
                     mongodb:{
-                        uri: 'mongodb://localhost:27017/demo'
+                        uri: 'mongodb://btc17:btc17@ds257808.mlab.com:57808/btc17'
                     },
                     autoIndex: false,
                     models:{
-                        Movie:"./build/models/Movie",
                         Student:"./build/models/Student",
                         Lesson:"./build/models/Lessons",
                         Attendance: "./build/models/Attendance",
