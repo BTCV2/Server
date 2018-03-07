@@ -10,7 +10,7 @@ exports.register = function (server, options, cont) {
             config: {
                 auth: {
                     strategy: 'BTCAuth',
-                    scope: ['user', 'admin']
+                    scope: ['admin', 'student']
                 }
             },
             handler: lessonctrl.getLesson

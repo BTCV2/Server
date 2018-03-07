@@ -69,7 +69,7 @@ export class LessonController {
                 reply(err)
             }
             else {
-                reply(success)
+                reply(success[0].lessons);
             }
         })
     }

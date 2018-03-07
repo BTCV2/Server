@@ -12,7 +12,7 @@ exports.register = function (server: Hapi.Server, options, cont) {
             config:{
                 auth: {
                     strategy: 'BTCAuth',
-                    scope: ['user','admin']
+                    scope: ['admin', 'student']
                 }
             },
             handler:lessonctrl.getLesson

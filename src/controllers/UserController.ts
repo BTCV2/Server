@@ -91,6 +91,7 @@ export class UserController{
         const filter = {
             "userName":request.payload.userName
         }
+        console.log('equest.payload',request.payload);
         User.findOne(filter, function (err, success) {
             if(err){
                 reply(err).code(500);
@@ -127,7 +128,7 @@ export class UserController{
             scopes = 'student';
         }
 
-        return jwt.sign({ id: user._id, username: user.username, scope: scopes }, 'BTC', { algorithm: 'HS256', expiresIn: "1h" } );
+        return jwt.sign({ id: user._id, username: user.userName, scope: scopes }, 'BTC', { algorithm: 'HS256', expiresIn: "1h" } );
 
 
     }
