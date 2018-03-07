@@ -73,7 +73,6 @@ const manifest = {
                     },
                     autoIndex: false,
                     models:{
-                        Movie:"./build/models/Movie",
                         Student:"./build/models/Student",
                         Lesson:"./build/models/Lessons",
                         Attendance: "./build/models/Attendance",
