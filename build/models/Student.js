@@ -17,6 +17,7 @@ Student.schema = Joi.object().keys({
     school: Joi.string().optional(),
     phoneNumber: Joi.string().optional(),
     parentName: Joi.string().optional(),
-    email: Joi.string().optional()
+    email: Joi.string().optional(),
+    image: Joi.any().optional()
 });
 module.exports = Student;

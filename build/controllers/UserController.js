@@ -101,7 +101,7 @@ class UserController {
             else if (success === null) {
                 console.log('SUCCESS', success);
                 console.log('filter', filter);
-                reply().code(404);
+                reply(Boom.badRequest('Incorrect password!'));
             }
             else {
                 /* reply(success).code(200)*/
