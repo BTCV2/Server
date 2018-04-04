@@ -32,12 +32,12 @@ exports.register = function (server, options, cont) {
         {
             method: "GET",
             path: "/student/{rollNumber}",
-            // config:{
-            //     auth: {
-            //         strategy: 'BTCAuth',
-            //         scope: ['admin','student']
-            //     }
-            // },
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['admin', 'student']
+                }
+            },
             handler: studentctrl.getStudent
         },
         {
