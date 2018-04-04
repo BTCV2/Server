@@ -74,7 +74,8 @@ const manifest = {
             plugin: {
                 register: 'hapi-cors',
                 options: {
-                    origins: ['http://localhost:4200']
+                    origins: ['http://localhost:4200'],
+                    methods: ['POST, GET, OPTIONS, PUT, DELETE'],
                 }
             }
         },
