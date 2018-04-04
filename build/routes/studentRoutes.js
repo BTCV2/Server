@@ -32,17 +32,17 @@ exports.register = function (server, options, cont) {
         {
             method: "GET",
             path: "/student/{rollNumber}",
-            config: {
-                auth: {
-                    strategy: 'BTCAuth',
-                    scope: ['admin']
-                }
-            },
+            // config:{
+            //     auth: {
+            //         strategy: 'BTCAuth',
+            //         scope: ['admin','student']
+            //     }
+            // },
             handler: studentctrl.getStudent
         },
         {
             method: "PUT",
-            path: "/student/{rollNumber}",
+            path: "/student/{rollNumber}/update",
             config: {
                 auth: {
                     strategy: 'BTCAuth',
