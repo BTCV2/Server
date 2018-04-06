@@ -58,6 +58,11 @@ const manifest = {
         },
         {
             plugin:{
+                register: './routes/testRoutes',
+            }
+        },
+        {
+            plugin:{
                 register: './routes/SyllabusCompletionRoutes',
             }
         },
@@ -84,7 +89,8 @@ const manifest = {
                         Attendance: "./build/models/Attendance",
                         Mark:"./build/models/Marks",
                         User:"./build/models/User",
-                        SyllabusCompletion:"./build/models/SyllabusCompletion"
+                        SyllabusCompletion:"./build/models/SyllabusCompletion",
+                        Test:"./build/models/Test"
                     }
                 }
             }
