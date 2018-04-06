@@ -78,7 +78,7 @@ export class UserController{
             if(err){
                 reply().code(500);
             }else{
-                console.log("DELETED ", success)
+        
                 reply(success).code(204)
             }
 
@@ -91,14 +91,12 @@ export class UserController{
         const filter = {
             "userName":request.payload.userName
         }
-        console.log('equest.payload',request.payload);
+    
         User.findOne(filter, function (err, success) {
             if(err){
                 reply(err).code(500);
             }
             else if(success === null){
-                console.log('SUCCESS', success);
-                console.log('filter', filter);
                 reply(Boom.badRequest('Incorrect password!'));
             }
             else{

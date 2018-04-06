@@ -26,12 +26,12 @@ export class AttendanceController{
         const filter = {
             'rollNumber':request.params.rollNumber
         }
-        attendanceModel.find(filter, function (err, success) {
+        attendanceModel.pagedFind(filter, '', '-date', 1, 1, function (err, success) {
             if(err){
                 reply(err)
             }
             else {
-                reply(success)
+                reply(success.data)
             }
         })
     }
