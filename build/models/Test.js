@@ -15,5 +15,6 @@ Test.schema = Joi.object().keys({
     date: Joi.string().optional(),
     mark: Joi.string().optional(),
     fullMark: Joi.string().optional(),
+    percentage: Joi.number().optional()
 });
 module.exports = Test;
