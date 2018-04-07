@@ -35,6 +35,20 @@ export class AttendanceController{
             }
         })
     }
+    getAllAttendance (request: Hapi.Request, reply){
+        const attendanceModel  = request.server.plugins['hapi-mongo-models'].Attendance;
+        const filter = {
+            'rollNumber':request.params.rollNumber
+        }
+        attendanceModel.find(filter, function (err, success) {
+            if(err){
+                reply(err)
+            }
+            else {
+                reply(success)
+            }
+        })
+    }
 
     editAttendance(request: Hapi.Request, reply){
         const attendanceModel  = request.server.plugins['hapi-mongo-models'].Attendance;
