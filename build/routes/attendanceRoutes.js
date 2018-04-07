@@ -16,6 +16,17 @@ exports.register = function (server, options, cont) {
             handler: attendenceCtrl.findAttendanceOfaStundent
         },
         {
+            method: "GET",
+            path: "/attendance/{rollNumber}/.search",
+            config: {
+                auth: {
+                    strategy: 'BTCAuth',
+                    scope: ['student', 'admin']
+                }
+            },
+            handler: attendenceCtrl.getAllAttendance
+        },
+        {
             method: "POST",
             path: "/attendance/{rollNumber}",
             config: {
