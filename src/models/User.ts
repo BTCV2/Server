@@ -13,6 +13,7 @@ User.collection = 'users';
 User.schema = Joi.object().keys({
     userName: Joi.string().optional(),
     password: Joi.string().optional(),
-    role: Joi.string().optional()
+    role: Joi.string().optional(),
+    firstLogin: Joi.string().optional()
 });
 module.exports = User;
