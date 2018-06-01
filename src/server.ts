@@ -19,7 +19,7 @@ const manifest = {
         }
     },
     connections:[{
-        port:8088
+        port:process.env.PORT
     }],
     registrations:[
          {
@@ -108,7 +108,7 @@ const startServer = async function()  {
     try{    
         const server = await Glue.compose(manifest,options);
         await server.start();
-        console.log('Server Started!');
+        console.log('Server Started! on port'+ server.info.port);
     }catch(err){
         console.error(err);
     }
