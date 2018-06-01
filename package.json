@@ -4,14 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build && npm run build:live",
+    "start": "npm run build && npm run build:live && node app",
     "build": "gulp build",
     "test": "gulp test",
     "prebuild": "npm install",
     "build:dev": "nodemon start build/src/server.js --watch",
     "build:live": "nodemon build/src/server.js",
     "tsc": "tsc",
-    "tsc:watch": "tsc -w"
+    "tsc:watch": "tsc -w",
+    "postinstall": "gulp default"
   },
   "author": "",
   "license": "ISC",

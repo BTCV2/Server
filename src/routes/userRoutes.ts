@@ -11,12 +11,12 @@ exports.register = function(server: Hapi.Server, options, cont){
         {
             method:"POST",
             path:"/user/create",
-            config:{
+            /*config:{
                 auth: {
                     strategy: 'BTCAuth',
                     scope: ['admin']
                 }
-            },
+            },*/
             handler: userctrl.insertUser
         },
         {
