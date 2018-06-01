@@ -4,8 +4,9 @@
 "use strict";
 import * as Glue from "glue";
 const dbOpts = {
-   /* url: 'mongodb://localhost:27017/demo',*/
-    url:'mongodb://btc-admin:btcAdmin17@ds137246.mlab.com:37246/btcv2',
+
+    /*url: 'mongodb://localhost:27017/demo',*/
+    url: 'mongodb://btc-admin:btcAdmin17@ds137246.mlab.com:37246/btcv2',
     settings: {
         poolSize: 10
     },
@@ -104,7 +105,7 @@ const options:Object = {
 };
 
 const startServer = async function()  {
-    try{
+    try{    
         const server = await Glue.compose(manifest,options);
         await server.start();
         console.log('Server Started!');

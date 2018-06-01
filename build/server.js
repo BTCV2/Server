@@ -13,7 +13,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const Glue = require("glue");
 const dbOpts = {
-    url: 'mongodb://localhost:27017/demo',
+    /*url: 'mongodb://localhost:27017/demo',*/
+    url: 'mongodb://btc-admin:btcAdmin17@ds137246.mlab.com:37246/btcv2',
     settings: {
         poolSize: 10
     },
@@ -89,7 +90,7 @@ const manifest = {
                 register: 'hapi-mongo-models',
                 options: {
                     mongodb: {
-                        uri: 'mongodb://localhost:27017/demo'
+                        uri: 'mongodb://btc-admin:btcAdmin17@ds137246.mlab.com:37246/btcv2'
                     },
                     autoIndex: false,
                     models: {

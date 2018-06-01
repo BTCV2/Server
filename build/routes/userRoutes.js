@@ -10,12 +10,12 @@ exports.register = function (server, options, cont) {
         {
             method: "POST",
             path: "/user/create",
-            config: {
+            /*config:{
                 auth: {
                     strategy: 'BTCAuth',
                     scope: ['admin']
                 }
-            },
+            },*/
             handler: userctrl.insertUser
         },
         {

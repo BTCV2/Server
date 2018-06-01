@@ -66,6 +66,7 @@ export class LessonController {
         }
         lesson.find(filter, function (err, success) {
             if(err){
+                console.log('ERROR IN FETCHING LESSONS');
                 reply(err)
             }
             else {
