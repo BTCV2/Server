@@ -38,6 +38,7 @@
     "@types/hapi": "^16.0.2",
     "@types/node": "^7.0.21",
     "babel-register": "^6.26.0",
+    "babylon": "^6.18.0",
     "bcrypt": "^1.0.3",
     "boom": "^7.2.0",
     "glob": "^7.1.2",
